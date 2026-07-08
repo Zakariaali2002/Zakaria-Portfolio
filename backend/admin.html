@@ -135,7 +135,7 @@
     async function fetchMessages() {
       const content = document.getElementById('content');
       try {
-        const res = await fetch('http://localhost:3001/api/messages');
+        const res = await fetch('/api/messages');
         if (!res.ok) throw new Error('Failed to fetch');
         const messages = await res.json();
         renderMessages(messages);
@@ -189,7 +189,7 @@
     async function deleteMessage(id) {
       if (!confirm('Delete this message?')) return;
       try {
-        await fetch(`http://localhost:3001/api/messages/${id}`, { method: 'DELETE' });
+        await fetch(`/api/messages/${id}`, { method: 'DELETE' });
         showToast('Message deleted');
         fetchMessages();
       } catch {
