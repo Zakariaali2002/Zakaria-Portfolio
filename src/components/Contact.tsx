@@ -3,7 +3,7 @@ import type { FormEvent } from "react";
 import { Mail, MapPin, Phone, Send, CheckCircle2, AlertCircle, Loader2 } from "lucide-react";
 import Reveal from "./Reveal";
 
-const API_URL = "http://localhost:3001/api/contact";
+const API_URL = "https://zakaria-portfolio-backend-58qz.vercel.app/api/contact";
 
 const info = [
   { icon: Mail, label: "Email", value: "zakriaali452@gmail.com" },
