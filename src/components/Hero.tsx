@@ -1,9 +1,11 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef, lazy, Suspense } from "react";
 import type { MouseEvent } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, Download, ChevronDown } from "lucide-react";
 import { GithubIcon, LinkedinIcon, DribbbleIcon, InstagramIcon } from "./BrandIcons";
 import CountUp from "./CountUp";
+
+const TechIcons3D = lazy(() => import("./TechIcons3D"));
 
 const roles = ["Creative Designer", "UI/UX Designer", "Web Developer", "Brand Strategist"];
 
@@ -97,22 +99,10 @@ export default function Hero() {
         }}
       />
 
-      {/* floating particles */}
-      {[
-        { left: "12%", top: "22%", d: 0 },
-        { left: "85%", top: "18%", d: 1.2 },
-        { left: "70%", top: "70%", d: 2.1 },
-        { left: "20%", top: "75%", d: 0.6 },
-        { left: "50%", top: "12%", d: 1.7 },
-      ].map((p, i) => (
-        <motion.span
-          key={i}
-          className="pointer-events-none absolute h-1.5 w-1.5 rounded-full bg-gradient-to-r from-brand to-brand-2"
-          style={{ left: p.left, top: p.top }}
-          animate={{ y: [0, -22, 0], opacity: [0.25, 0.9, 0.25] }}
-          transition={{ duration: 4.5, repeat: Infinity, delay: p.d, ease: "easeInOut" }}
-        />
-      ))}
+      {/* 3D Floating Tech Icons */}
+      <Suspense fallback={null}>
+        <TechIcons3D />
+      </Suspense>
 
       <div className="relative mx-auto grid w-full max-w-6xl items-center gap-14 px-5 lg:grid-cols-2">
         {/* Left */}

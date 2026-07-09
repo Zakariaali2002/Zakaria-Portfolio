@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import Reveal from "./Reveal";
+import CircularSkill from "./CircularSkill";
 
 const skills = [
   { name: "UI/UX Design", level: 95, color: "from-violet-500 to-fuchsia-500" },
@@ -15,6 +16,21 @@ const tools = [
   "Tailwind", "TypeScript", "Framer", "Webflow", "WordPress", "Blender",
 ];
 
+const categories = [
+  {
+    title: "Frontend",
+    items: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
+  },
+  {
+    title: "Design",
+    items: ["Figma", "Adobe XD", "Photoshop", "Illustrator", "After Effects"],
+  },
+  {
+    title: "Tools",
+    items: ["Git", "VS Code", "Webflow", "WordPress", "Blender"],
+  },
+];
+
 export default function Skills() {
   return (
     <section id="skills" className="relative overflow-hidden py-24">
@@ -28,7 +44,15 @@ export default function Skills() {
           </h2>
         </Reveal>
 
-        <div className="mt-14 grid gap-x-14 gap-y-8 md:grid-cols-2">
+        {/* Circular skill rings */}
+        <div className="mt-14 grid grid-cols-2 gap-8 sm:grid-cols-3 lg:grid-cols-6">
+          {skills.slice(0, 6).map((s, i) => (
+            <CircularSkill key={s.name} name={s.name} level={s.level} color={s.color} delay={i * 0.08} />
+          ))}
+        </div>
+
+        {/* Skill bars */}
+        <div className="mt-16 grid gap-x-14 gap-y-8 md:grid-cols-2">
           {skills.map((s, i) => (
             <Reveal key={s.name} delay={i * 0.06}>
               <div>
@@ -50,8 +74,30 @@ export default function Skills() {
           ))}
         </div>
 
+        {/* Categories */}
+        <div className="mt-16 grid gap-6 sm:grid-cols-3">
+          {categories.map((cat, i) => (
+            <Reveal key={cat.title} delay={i * 0.08}>
+              <div className="rounded-2xl border border-line bg-card p-6 transition hover:border-brand/40 hover:shadow-xl hover:shadow-brand/10">
+                <h3 className="font-display mb-4 text-lg font-semibold text-white">{cat.title}</h3>
+                <div className="flex flex-wrap gap-2">
+                  {cat.items.map((item) => (
+                    <motion.span
+                      key={item}
+                      whileHover={{ scale: 1.05, y: -2 }}
+                      className="rounded-full border border-line bg-white/5 px-3.5 py-1.5 text-xs font-medium text-white/70 transition hover:border-brand/50 hover:text-white hover:shadow-lg hover:shadow-brand/20"
+                    >
+                      {item}
+                    </motion.span>
+                  ))}
+                </div>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+
         {/* Marquee */}
-        <Reveal delay={0.2} className="mt-20">
+        <Reveal delay={0.2} className="mt-16">
           <div className="relative overflow-hidden rounded-2xl border border-line bg-card/60 py-5 [mask-image:linear-gradient(90deg,transparent,black_12%,black_88%,transparent)]">
             <div className="animate-marquee flex w-max gap-10 whitespace-nowrap">
               {[...tools, ...tools].map((t, i) => (

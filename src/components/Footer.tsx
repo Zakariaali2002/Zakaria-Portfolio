@@ -1,8 +1,9 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import type { FormEvent } from "react";
-import { Heart, Mail, Phone, MapPin, ArrowRight, ArrowUp, Send, CheckCircle2 } from "lucide-react";
+import { Heart, Mail, Phone, MapPin, ArrowRight, ArrowUp, Send, CheckCircle2, Clock } from "lucide-react";
 import { GithubIcon, LinkedinIcon, DribbbleIcon, InstagramIcon } from "./BrandIcons";
 import Logo from "./Logo";
+import { motion } from "framer-motion";
 
 const socials = [
   { icon: GithubIcon, href: "#", label: "GitHub" },
@@ -33,6 +34,15 @@ const contactInfo = [
   { icon: MapPin, value: "Karachi, Pakistan", href: "#contact" },
 ];
 
+function CurrentTime() {
+  const [time, setTime] = useState(new Date());
+  useEffect(() => {
+    const timer = setInterval(() => setTime(new Date()), 1000);
+    return () => clearInterval(timer);
+  }, []);
+  return <span suppressHydrationWarning>{time.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}</span>;
+}
+
 export default function Footer() {
   const [subscribed, setSubscribed] = useState(false);
 
@@ -46,12 +56,49 @@ export default function Footer() {
 
   return (
     <footer className="relative overflow-hidden border-t border-line">
+      {/* Animated wave SVG */}
+      <div className="pointer-events-none absolute top-0 left-0 w-full overflow-hidden leading-none">
+        <svg
+          viewBox="0 0 1440 100"
+          className="relative h-[60px] w-[calc(100%+1.3px)] opacity-20"
+          preserveAspectRatio="none"
+        >
+          <path
+            fill="url(#wave-gradient)"
+            d="M0,50 C240,100 480,0 720,50 C960,100 1200,0 1440,50 L1440,100 L0,100 Z"
+          >
+            <animate
+              attributeName="d"
+              dur="8s"
+              repeatCount="indefinite"
+              values="
+                M0,50 C240,100 480,0 720,50 C960,100 1200,0 1440,50 L1440,100 L0,100 Z;
+                M0,65 C240,0 480,100 720,65 C960,0 1200,100 1440,65 L1440,100 L0,100 Z;
+                M0,50 C240,100 480,0 720,50 C960,100 1200,0 1440,50 L1440,100 L0,100 Z
+              "
+            />
+          </path>
+          <defs>
+            <linearGradient id="wave-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stopColor="#8b5cf6" />
+              <stop offset="50%" stopColor="#d946ef" />
+              <stop offset="100%" stopColor="#22d3ee" />
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+
       {/* background glow */}
       <div className="pointer-events-none absolute -top-40 left-1/2 h-[300px] w-[700px] -translate-x-1/2 rounded-full bg-brand/10 blur-[140px]" />
 
       {/* CTA strip */}
       <div className="relative mx-auto max-w-6xl px-5 pt-14">
-        <div className="btn-shine relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-r from-brand/25 via-card to-brand-2/20 px-8 py-10 sm:px-12">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="btn-shine relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-r from-brand/25 via-card to-brand-2/20 px-8 py-10 sm:px-12"
+        >
           <div className="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-center">
             <div>
               <h3 className="font-display text-2xl font-bold sm:text-3xl">
@@ -67,7 +114,7 @@ export default function Footer() {
               <ArrowRight className="h-4.5 w-4.5 transition-transform group-hover:translate-x-1" />
             </a>
           </div>
-        </div>
+        </motion.div>
       </div>
 
       {/* Main footer columns */}
@@ -85,14 +132,15 @@ export default function Footer() {
             </p>
             <div className="mt-6 flex gap-3">
               {socials.map((s) => (
-                <a
+                <motion.a
                   key={s.label}
                   href={s.href}
                   aria-label={s.label}
-                  className="flex h-10 w-10 items-center justify-center rounded-full border border-line bg-white/5 text-white/60 transition hover:-translate-y-1 hover:border-brand/60 hover:bg-brand/20 hover:text-white hover:shadow-lg hover:shadow-brand/20"
+                  whileHover={{ y: -4, scale: 1.1 }}
+                  className="flex h-10 w-10 items-center justify-center rounded-full border border-line bg-white/5 text-white/60 transition hover:border-brand/60 hover:bg-brand/20 hover:text-white hover:shadow-lg hover:shadow-brand/20"
                 >
                   <s.icon className="h-4 w-4" />
-                </a>
+                </motion.a>
               ))}
             </div>
           </div>
@@ -175,11 +223,19 @@ export default function Footer() {
       {/* Bottom bar */}
       <div className="relative border-t border-line">
         <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-5 py-6 sm:flex-row">
-          <p className="flex items-center gap-1.5 text-sm text-white/50">
+          <motion.p
+            className="flex items-center gap-1.5 text-sm text-white/50"
+            whileHover={{ scale: 1.02 }}
+          >
             © {new Date().getFullYear()} Zakaria. All rights reserved. Made with
-            <Heart className="h-4 w-4 fill-rose-500 text-rose-500" />
+            <Heart className="h-4 w-4 animate-pulse fill-rose-500 text-rose-500" />
             in Pakistan
-          </p>
+            <span className="hidden items-center gap-1.5 sm:flex">
+              <span className="ml-2 h-1 w-1 rounded-full bg-white/30" />
+              <Clock className="h-3.5 w-3.5" />
+              <CurrentTime />
+            </span>
+          </motion.p>
 
           <div className="flex items-center gap-6">
             <a href="#home" className="text-sm text-white/50 transition hover:text-white">
@@ -188,13 +244,15 @@ export default function Footer() {
             <a href="#home" className="text-sm text-white/50 transition hover:text-white">
               Terms of Service
             </a>
-            <button
+            <motion.button
               onClick={scrollTop}
               aria-label="Back to top"
-              className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-r from-brand to-brand-2 text-white shadow-lg shadow-brand/30 transition hover:-translate-y-1 hover:shadow-brand/50"
+              whileHover={{ y: -4, scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-r from-brand to-brand-2 text-white shadow-lg shadow-brand/30 transition hover:shadow-brand/50"
             >
               <ArrowUp className="h-4.5 w-4.5" />
-            </button>
+            </motion.button>
           </div>
         </div>
       </div>
