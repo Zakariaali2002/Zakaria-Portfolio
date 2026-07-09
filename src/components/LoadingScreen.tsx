@@ -26,7 +26,7 @@ export default function LoadingScreen() {
               transition={{ duration: 0.5, ease: [0.21, 0.65, 0.36, 1] }}
             >
               <motion.span
-                className="text-2xl font-black text-white"
+                className="text-2xl font-black text-fg"
                 animate={{ rotate: [0, 10, -10, 0] }}
                 transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
               >
@@ -34,7 +34,7 @@ export default function LoadingScreen() {
               </motion.span>
             </motion.div>
             <motion.h1
-              className="font-display text-3xl font-bold text-white"
+              className="font-display text-3xl font-bold text-fg"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.5 }}
@@ -62,7 +62,7 @@ export default function LoadingScreen() {
               ))}
             </motion.div>
             <motion.p
-              className="mt-6 text-sm text-white/40 tracking-[0.2em] uppercase"
+              className="mt-6 text-sm text-fg/40 tracking-[0.2em] uppercase"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.8, duration: 0.5 }}

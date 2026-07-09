@@ -102,7 +102,7 @@ export default function CommandPalette() {
           >
             <div className="overflow-hidden rounded-2xl border border-line bg-card shadow-2xl shadow-brand/10">
               <div className="flex items-center gap-3 border-b border-line px-5 py-3.5">
-                <Command className="h-5 w-5 text-white/40" />
+                <Command className="h-5 w-5 text-fg/40" />
                 <input
                   ref={inputRef}
                   type="text"
@@ -113,9 +113,9 @@ export default function CommandPalette() {
                   }}
                   onKeyDown={onKeyDown}
                   placeholder="Search commands..."
-                  className="w-full bg-transparent text-base text-white outline-none placeholder:text-white/30"
+                  className="w-full bg-transparent text-base text-fg outline-none placeholder:text-fg/30"
                 />
-                <kbd className="hidden rounded-md border border-line bg-white/5 px-2 py-0.5 text-xs text-white/40 sm:inline-block">
+                <kbd className="hidden rounded-md border border-line bg-white/5 px-2 py-0.5 text-xs text-fg/40 sm:inline-block">
                   ESC
                 </kbd>
               </div>
@@ -127,8 +127,8 @@ export default function CommandPalette() {
                     onMouseEnter={() => setSelectedIndex(i)}
                     className={`flex w-full items-center gap-3 px-5 py-3 text-left text-sm transition ${
                       i === selectedIndex
-                        ? "bg-brand/20 text-white"
-                        : "text-white/60 hover:bg-white/5 hover:text-white"
+                        ? "bg-brand/20 text-fg"
+                        : "text-fg/60 hover:bg-white/5 hover:text-fg"
                     }`}
                   >
                     <item.icon className="h-4.5 w-4.5" />
@@ -137,10 +137,10 @@ export default function CommandPalette() {
                   </button>
                 ))}
                 {filtered.length === 0 && (
-                  <div className="px-5 py-8 text-center text-sm text-white/40">No results found</div>
+                  <div className="px-5 py-8 text-center text-sm text-fg/40">No results found</div>
                 )}
               </div>
-              <div className="border-t border-line px-5 py-2.5 text-[11px] text-white/30">
+              <div className="border-t border-line px-5 py-2.5 text-[11px] text-fg/30">
                 Navigate with ↑↓ • Enter to select • Esc to close
               </div>
             </div>

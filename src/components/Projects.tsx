@@ -97,7 +97,7 @@ export default function Projects() {
                 className={`rounded-full px-4 py-2 text-sm font-medium transition ${
                   active === c
                     ? "bg-gradient-to-r from-brand to-brand-2 text-white shadow-lg shadow-brand/30"
-                    : "border border-line bg-white/5 text-white/60 hover:text-white"
+                    : "border border-line bg-white/5 text-fg/60 hover:text-fg"
                 }`}
               >
                 {c}
@@ -141,13 +141,13 @@ export default function Projects() {
                 </div>
 
                 <div className="p-6">
-                  <h3 className="font-display text-xl font-semibold text-white transition group-hover:text-gradient">
+                  <h3 className="font-display text-xl font-semibold text-fg transition group-hover:text-gradient">
                     {p.title}
                   </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-white/55">{p.desc}</p>
+                  <p className="mt-2 text-sm leading-relaxed text-fg/55">{p.desc}</p>
                   <div className="mt-4 flex flex-wrap gap-2">
                     {p.tags.map((t) => (
-                      <span key={t} className="rounded-full bg-white/6 px-3 py-1 text-xs text-white/60">
+                      <span key={t} className="rounded-full bg-white/6 px-3 py-1 text-xs text-fg/60">
                         {t}
                       </span>
                     ))}
@@ -162,7 +162,7 @@ export default function Projects() {
         <Reveal delay={0.15} className="mt-12 text-center">
           <a
             href="#contact"
-            className="inline-flex items-center gap-2 rounded-full border border-line bg-white/5 px-7 py-3.5 font-semibold text-white transition hover:border-brand/50 hover:bg-white/10"
+            className="inline-flex items-center gap-2 rounded-full border border-line bg-white/5 px-7 py-3.5 font-semibold text-fg transition hover:border-brand/50 hover:bg-white/10"
           >
             Want something like this? Let's talk
             <ArrowUpRight className="h-4.5 w-4.5" />

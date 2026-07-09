@@ -57,8 +57,8 @@ export default function Skills() {
             <Reveal key={s.name} delay={i * 0.06}>
               <div>
                 <div className="mb-2.5 flex items-center justify-between">
-                  <span className="font-medium text-white/85">{s.name}</span>
-                  <span className="font-display text-sm font-semibold text-white/50">{s.level}%</span>
+                  <span className="font-medium text-fg/85">{s.name}</span>
+                  <span className="font-display text-sm font-semibold text-fg/50">{s.level}%</span>
                 </div>
                 <div className="h-2.5 overflow-hidden rounded-full bg-white/8">
                   <motion.div
@@ -79,13 +79,13 @@ export default function Skills() {
           {categories.map((cat, i) => (
             <Reveal key={cat.title} delay={i * 0.08}>
               <div className="rounded-2xl border border-line bg-card p-6 transition hover:border-brand/40 hover:shadow-xl hover:shadow-brand/10">
-                <h3 className="font-display mb-4 text-lg font-semibold text-white">{cat.title}</h3>
+                <h3 className="font-display mb-4 text-lg font-semibold text-fg">{cat.title}</h3>
                 <div className="flex flex-wrap gap-2">
                   {cat.items.map((item) => (
                     <motion.span
                       key={item}
                       whileHover={{ scale: 1.05, y: -2 }}
-                      className="rounded-full border border-line bg-white/5 px-3.5 py-1.5 text-xs font-medium text-white/70 transition hover:border-brand/50 hover:text-white hover:shadow-lg hover:shadow-brand/20"
+                      className="rounded-full border border-line bg-white/5 px-3.5 py-1.5 text-xs font-medium text-fg/70 transition hover:border-brand/50 hover:text-fg hover:shadow-lg hover:shadow-brand/20"
                     >
                       {item}
                     </motion.span>
@@ -101,7 +101,7 @@ export default function Skills() {
           <div className="relative overflow-hidden rounded-2xl border border-line bg-card/60 py-5 [mask-image:linear-gradient(90deg,transparent,black_12%,black_88%,transparent)]">
             <div className="animate-marquee flex w-max gap-10 whitespace-nowrap">
               {[...tools, ...tools].map((t, i) => (
-                <span key={i} className="flex items-center gap-10 font-display text-lg font-semibold text-white/40">
+                <span key={i} className="flex items-center gap-10 font-display text-lg font-semibold text-fg/40">
                   {t}
                   <span className="text-gradient text-xl">✦</span>
                 </span>

@@ -68,7 +68,7 @@ export default function Contact() {
           <h2 className="font-display text-4xl font-bold tracking-tight sm:text-5xl">
             Let's build something <span className="text-gradient">amazing together</span>
           </h2>
-          <p className="mx-auto mt-4 max-w-xl text-white/60">
+          <p className="mx-auto mt-4 max-w-xl text-fg/60">
             Have a project in mind? Drop me a message and I'll get back to you within 24 hours.
           </p>
         </Reveal>
@@ -85,17 +85,17 @@ export default function Contact() {
                     <i.icon className="h-5 w-5" />
                   </div>
                   <div>
-                    <p className="text-xs text-white/50">{i.label}</p>
-                    <p className="font-medium text-white">{i.value}</p>
+                    <p className="text-xs text-fg/50">{i.label}</p>
+                    <p className="font-medium text-fg">{i.value}</p>
                   </div>
                 </div>
               ))}
 
               <div className="relative mt-2 flex-1 overflow-hidden rounded-2xl border border-line bg-gradient-to-br from-brand/20 via-card to-brand-2/15 p-6">
-                <p className="font-display text-xl font-semibold text-white">
+                <p className="font-display text-xl font-semibold text-fg">
                   Prefer a quick chat? <span className="text-gradient">Let's hop on a call.</span>
                 </p>
-                <p className="mt-2 text-sm text-white/60">
+                <p className="mt-2 text-sm text-fg/60">
                   Free 15-minute discovery call to discuss your project — no strings attached.
                 </p>
                 <span className="animate-spin-slow absolute -right-8 -bottom-8 text-7xl opacity-20">✦</span>
@@ -107,7 +107,7 @@ export default function Contact() {
             <form ref={formRef} onSubmit={handleSubmit} className="rounded-3xl border border-line bg-card p-7 sm:p-9">
               <div className="grid gap-5 sm:grid-cols-2">
                 <div>
-                  <label htmlFor="name" className="mb-2 block text-sm font-medium text-white/70">
+                  <label htmlFor="name" className="mb-2 block text-sm font-medium text-fg/70">
                     Your Name
                   </label>
                   <input
@@ -115,11 +115,11 @@ export default function Contact() {
                     name="name"
                     required
                     placeholder="John Doe"
-                    className="w-full rounded-xl border border-line bg-white/5 px-4 py-3 text-white placeholder-white/30 transition outline-none focus:border-brand/60 focus:bg-white/8"
+                    className="w-full rounded-xl border border-line bg-white/5 px-4 py-3 text-fg placeholder-fg/30 transition outline-none focus:border-brand/60 focus:bg-white/8"
                   />
                 </div>
                 <div>
-                  <label htmlFor="email" className="mb-2 block text-sm font-medium text-white/70">
+                  <label htmlFor="email" className="mb-2 block text-sm font-medium text-fg/70">
                     Email Address
                   </label>
                   <input
@@ -128,12 +128,12 @@ export default function Contact() {
                     type="email"
                     required
                     placeholder="john@example.com"
-                    className="w-full rounded-xl border border-line bg-white/5 px-4 py-3 text-white placeholder-white/30 transition outline-none focus:border-brand/60 focus:bg-white/8"
+                    className="w-full rounded-xl border border-line bg-white/5 px-4 py-3 text-fg placeholder-fg/30 transition outline-none focus:border-brand/60 focus:bg-white/8"
                   />
                 </div>
               </div>
               <div className="mt-5">
-                <label htmlFor="subject" className="mb-2 block text-sm font-medium text-white/70">
+                <label htmlFor="subject" className="mb-2 block text-sm font-medium text-fg/70">
                   Subject
                 </label>
                 <input
@@ -141,11 +141,11 @@ export default function Contact() {
                   name="subject"
                   required
                   placeholder="Project inquiry"
-                  className="w-full rounded-xl border border-line bg-white/5 px-4 py-3 text-white placeholder-white/30 transition outline-none focus:border-brand/60 focus:bg-white/8"
+                  className="w-full rounded-xl border border-line bg-white/5 px-4 py-3 text-fg placeholder-fg/30 transition outline-none focus:border-brand/60 focus:bg-white/8"
                 />
               </div>
               <div className="mt-5">
-                <label htmlFor="message" className="mb-2 block text-sm font-medium text-white/70">
+                <label htmlFor="message" className="mb-2 block text-sm font-medium text-fg/70">
                   Message
                 </label>
                 <textarea
@@ -154,7 +154,7 @@ export default function Contact() {
                   required
                   rows={5}
                   placeholder="Tell me about your project..."
-                  className="w-full resize-none rounded-xl border border-line bg-white/5 px-4 py-3 text-white placeholder-white/30 transition outline-none focus:border-brand/60 focus:bg-white/8"
+                  className="w-full resize-none rounded-xl border border-line bg-white/5 px-4 py-3 text-fg placeholder-fg/30 transition outline-none focus:border-brand/60 focus:bg-white/8"
                 />
               </div>
 

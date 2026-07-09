@@ -46,8 +46,8 @@ export function useTheme() {
       root.style.setProperty("--color-panel", "#ffffff");
       root.style.setProperty("--color-card", "#ffffff");
       root.style.setProperty("--color-line", "rgba(0,0,0,0.08)");
-      root.style.setProperty("--color-text", "#1a1a2e");
-      root.style.setProperty("--color-text-secondary", "rgba(0,0,0,0.55)");
+      root.style.setProperty("--color-fg", "#1a1a2e");
+      root.style.setProperty("--color-fg-secondary", "rgba(0,0,0,0.55)");
       root.classList.add("light");
       root.classList.remove("dark");
     } else {
@@ -55,8 +55,8 @@ export function useTheme() {
       root.style.setProperty("--color-panel", "#0d0d17");
       root.style.setProperty("--color-card", "#12121f");
       root.style.setProperty("--color-line", "rgba(255,255,255,0.08)");
-      root.style.setProperty("--color-text", "#e8e8f0");
-      root.style.setProperty("--color-text-secondary", "rgba(255,255,255,0.55)");
+      root.style.setProperty("--color-fg", "#e8e8f0");
+      root.style.setProperty("--color-fg-secondary", "rgba(255,255,255,0.55)");
       root.classList.remove("light");
       root.classList.add("dark");
     }

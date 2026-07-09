@@ -50,7 +50,7 @@ export default function Navbar() {
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 + i * 0.05 }}
-              className="rounded-full px-4 py-2 text-sm font-medium text-white/70 transition hover:bg-white/5 hover:text-white"
+              className="rounded-full px-4 py-2 text-sm font-medium text-fg/70 transition hover:bg-white/5 hover:text-fg"
             >
               {l.label}
             </motion.a>
@@ -61,7 +61,7 @@ export default function Navbar() {
             onClick={toggleTheme}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
-            className="ml-2 flex h-9 w-9 items-center justify-center rounded-full border border-line text-white/60 transition hover:border-brand/50 hover:text-white"
+            className="ml-2 flex h-9 w-9 items-center justify-center rounded-full border border-line text-fg/60 transition hover:border-brand/50 hover:text-fg"
             aria-label="Toggle theme"
           >
             {theme === "dark" ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
@@ -73,7 +73,7 @@ export default function Navbar() {
               onClick={() => setShowAccents(!showAccents)}
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
-              className="ml-1 flex h-9 w-9 items-center justify-center rounded-full border border-line text-white/60 transition hover:border-brand/50 hover:text-white"
+              className="ml-1 flex h-9 w-9 items-center justify-center rounded-full border border-line text-fg/60 transition hover:border-brand/50 hover:text-fg"
               aria-label="Accent color"
             >
               <Palette className="h-4 w-4" />
@@ -133,14 +133,14 @@ export default function Navbar() {
           {/* Mobile theme toggle */}
           <button
             onClick={toggleTheme}
-            className="flex h-10 w-10 items-center justify-center rounded-xl border border-line text-white/60"
+            className="flex h-10 w-10 items-center justify-center rounded-xl border border-line text-fg/60"
             aria-label="Toggle theme"
           >
             {theme === "dark" ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
           </button>
           <button
             onClick={() => setOpen(!open)}
-            className="flex h-10 w-10 items-center justify-center rounded-xl border border-line text-white"
+            className="flex h-10 w-10 items-center justify-center rounded-xl border border-line text-fg"
             aria-label="Toggle menu"
           >
             {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -162,14 +162,14 @@ export default function Navbar() {
                   key={l.href}
                   href={l.href}
                   onClick={() => setOpen(false)}
-                  className="rounded-xl px-4 py-3 text-sm font-medium text-white/80 transition hover:bg-white/5 hover:text-white"
+                  className="rounded-xl px-4 py-3 text-sm font-medium text-fg/80 transition hover:bg-white/5 hover:text-fg"
                 >
                   {l.label}
                 </a>
               ))}
               {/* Mobile accent colors */}
               <div className="mt-3 flex items-center gap-2 px-4">
-                <Palette className="h-4 w-4 text-white/40" />
+                <Palette className="h-4 w-4 text-fg/40" />
                 {accentOptions.map((a) => (
                   <button
                     key={a}

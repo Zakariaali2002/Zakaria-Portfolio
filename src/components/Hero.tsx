@@ -111,7 +111,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="mb-6 inline-flex items-center gap-2 rounded-full border border-line bg-white/5 px-4 py-2 text-sm text-white/80"
+            className="mb-6 inline-flex items-center gap-2 rounded-full border border-line bg-white/5 px-4 py-2 text-sm text-fg/80"
           >
             <span className="relative flex h-2.5 w-2.5">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-60" />
@@ -146,7 +146,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="block text-white/90"
+              className="block text-fg/90"
             >
               {typed}
               <span
@@ -160,7 +160,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 28 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.45 }}
-            className="mt-6 max-w-lg text-lg leading-relaxed text-white/60"
+            className="mt-6 max-w-lg text-lg leading-relaxed text-fg/60"
           >
             I craft beautiful digital experiences — from stunning brands to pixel-perfect websites and apps that people
             love to use.
@@ -185,7 +185,7 @@ export default function Hero() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.97 }}
               href="#contact"
-              className="inline-flex items-center gap-2 rounded-full border border-line bg-white/5 px-7 py-3.5 font-semibold text-white transition hover:border-brand/50 hover:bg-white/10"
+              className="inline-flex items-center gap-2 rounded-full border border-line bg-white/5 px-7 py-3.5 font-semibold text-fg transition hover:border-brand/50 hover:bg-white/10"
             >
               <Download className="h-4.5 w-4.5" />
               Download CV
@@ -207,7 +207,7 @@ export default function Hero() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.75 + i * 0.08 }}
                 whileHover={{ y: -5, scale: 1.1 }}
-                className="flex h-11 w-11 items-center justify-center rounded-full border border-line bg-white/5 text-white/70 transition hover:border-brand/60 hover:text-white hover:shadow-lg hover:shadow-brand/20"
+                className="flex h-11 w-11 items-center justify-center rounded-full border border-line bg-white/5 text-fg/70 transition hover:border-brand/60 hover:text-fg hover:shadow-lg hover:shadow-brand/20"
               >
                 <s.icon className="h-4.5 w-4.5" />
               </motion.a>
@@ -237,14 +237,14 @@ export default function Hero() {
             <p className="font-display text-2xl font-bold text-gradient">
               <CountUp end={50} suffix="+" />
             </p>
-            <p className="text-xs text-white/60">Projects Completed</p>
+            <p className="text-xs text-fg/60">Projects Completed</p>
           </motion.div>
           <motion.div
             style={{ translateZ: 60, animationDelay: "1.2s" }}
             className="animate-float absolute -right-6 bottom-16 hidden rounded-2xl border border-line bg-card/90 px-4 py-3 shadow-2xl backdrop-blur sm:block"
           >
             <p className="font-display text-2xl font-bold text-gradient">5.0 ★</p>
-            <p className="text-xs text-white/60">Client Rating</p>
+            <p className="text-xs text-fg/60">Client Rating</p>
           </motion.div>
 
           {/* orbiting sparkle */}
@@ -267,7 +267,7 @@ export default function Hero() {
               <p className="font-display text-2xl font-bold text-gradient">
                 <CountUp end={s.value} suffix={s.suffix} />
               </p>
-              <p className="text-xs text-white/55">{s.label}</p>
+              <p className="text-xs text-fg/55">{s.label}</p>
             </div>
           ))}
         </motion.div>
@@ -280,7 +280,7 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.4 }}
-        className="absolute bottom-4 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-1 text-white/40 transition hover:text-white lg:flex"
+        className="absolute bottom-4 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-1 text-fg/40 transition hover:text-fg lg:flex"
       >
         <span className="text-[10px] tracking-[0.3em] uppercase">Scroll</span>
         <ChevronDown className="animate-bounce-slow h-5 w-5" />

@@ -91,7 +91,7 @@ export default function Testimonials() {
                   ))}
                 </div>
 
-                <p className="mt-6 text-lg leading-relaxed text-white/80 sm:text-xl">"{t.text}"</p>
+                <p className="mt-6 text-lg leading-relaxed text-fg/80 sm:text-xl">"{t.text}"</p>
 
                 <div className="mt-8 flex items-center gap-4">
                   <div
@@ -100,8 +100,8 @@ export default function Testimonials() {
                     {t.initials}
                   </div>
                   <div>
-                    <p className="font-display font-semibold text-white">{t.name}</p>
-                    <p className="text-sm text-white/50">{t.role}</p>
+                    <p className="font-display font-semibold text-fg">{t.name}</p>
+                    <p className="text-sm text-fg/50">{t.role}</p>
                   </div>
                 </div>
               </motion.div>
@@ -128,14 +128,14 @@ export default function Testimonials() {
                 <button
                   onClick={() => go(-1)}
                   aria-label="Previous testimonial"
-                  className="group flex h-11 w-11 items-center justify-center rounded-full border border-line bg-white/5 text-white/70 transition hover:border-brand/50 hover:text-white hover:shadow-lg hover:shadow-brand/20"
+                  className="group flex h-11 w-11 items-center justify-center rounded-full border border-line bg-white/5 text-fg/70 transition hover:border-brand/50 hover:text-fg hover:shadow-lg hover:shadow-brand/20"
                 >
                   <ChevronLeft className="h-5 w-5 transition-transform group-hover:-translate-x-0.5" />
                 </button>
                 <button
                   onClick={() => go(1)}
                   aria-label="Next testimonial"
-                  className="group flex h-11 w-11 items-center justify-center rounded-full border border-line bg-white/5 text-white/70 transition hover:border-brand/50 hover:text-white hover:shadow-lg hover:shadow-brand/20"
+                  className="group flex h-11 w-11 items-center justify-center rounded-full border border-line bg-white/5 text-fg/70 transition hover:border-brand/50 hover:text-fg hover:shadow-lg hover:shadow-brand/20"
                 >
                   <ChevronRight className="h-5 w-5 transition-transform group-hover:translate-x-0.5" />
                 </button>

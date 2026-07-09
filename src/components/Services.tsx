@@ -50,11 +50,11 @@ export default function Services() {
                   <div className="mb-5 flex h-13 w-13 items-center justify-center rounded-2xl bg-gradient-to-br from-brand/25 to-brand-2/25 text-brand transition duration-300 group-hover:from-brand group-hover:to-brand-2 group-hover:text-white group-hover:shadow-lg group-hover:shadow-brand/40">
                     <s.icon className="h-6 w-6" />
                   </div>
-                  <h3 className="font-display text-lg font-semibold text-white">{s.title}</h3>
-                  <p className="mt-2.5 text-sm leading-relaxed text-white/55">{s.desc}</p>
+                  <h3 className="font-display text-lg font-semibold text-fg">{s.title}</h3>
+                  <p className="mt-2.5 text-sm leading-relaxed text-fg/55">{s.desc}</p>
                   <ul className="mt-5 space-y-2">
                     {s.perks.map((p) => (
-                      <li key={p} className="flex items-center gap-2 text-xs text-white/60">
+                      <li key={p} className="flex items-center gap-2 text-xs text-fg/60">
                         <span className="h-1.5 w-1.5 rounded-full bg-gradient-to-r from-brand to-brand-2" />
                         {p}
                       </li>
@@ -62,7 +62,7 @@ export default function Services() {
                   </ul>
                   <a
                     href="#contact"
-                    className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-brand transition group-hover:gap-2.5 group-hover:text-white"
+                    className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-brand transition group-hover:gap-2.5 group-hover:text-fg"
                   >
                     Get Started <ArrowRight className="h-4 w-4" />
                   </a>

@@ -37,16 +37,16 @@ export default function About() {
 
         <div className="mt-12 grid gap-12 lg:grid-cols-[1.2fr_1fr]">
           <Reveal delay={0.1}>
-            <div className="space-y-5 text-lg leading-relaxed text-white/65">
+            <div className="space-y-5 text-lg leading-relaxed text-fg/65">
               <p>
-                Hello! I'm <span className="font-semibold text-white">Zakaria</span> — a passionate creative designer
+                Hello! I'm <span className="font-semibold text-fg">Zakaria</span> — a passionate creative designer
                 and developer who loves building meaningful digital experiences. My journey started with a simple
                 curiosity for design, and today it has grown into a full-fledged craft.
               </p>
               <p>
-                I specialize in <span className="text-white">UI/UX design</span>,{" "}
-                <span className="text-white">web development</span> and{" "}
-                <span className="text-white">brand identity</span>. Whether it's a startup landing page, a full product
+                I specialize in <span className="text-fg">UI/UX design</span>,{" "}
+                <span className="text-fg">web development</span> and{" "}
+                <span className="text-fg">brand identity</span>. Whether it's a startup landing page, a full product
                 dashboard, or a complete rebrand — I bring strategy, creativity and code together to deliver work that
                 stands out.
               </p>
@@ -60,7 +60,7 @@ export default function About() {
               {["Figma", "React", "Tailwind CSS", "TypeScript", "Adobe CC", "Framer"].map((t) => (
                 <span
                   key={t}
-                  className="rounded-full border border-line bg-white/5 px-4 py-1.5 text-sm text-white/75 transition hover:border-brand/50 hover:text-white"
+                  className="rounded-full border border-line bg-white/5 px-4 py-1.5 text-sm text-fg/75 transition hover:border-brand/50 hover:text-fg"
                 >
                   {t}
                 </span>
@@ -75,8 +75,8 @@ export default function About() {
                   <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-brand/25 to-brand-2/25 text-brand transition group-hover:from-brand group-hover:to-brand-2 group-hover:text-white">
                     <h.icon className="h-5 w-5" />
                   </div>
-                  <h3 className="font-display mb-1.5 font-semibold text-white">{h.title}</h3>
-                  <p className="text-sm leading-relaxed text-white/55">{h.desc}</p>
+                  <h3 className="font-display mb-1.5 font-semibold text-fg">{h.title}</h3>
+                  <p className="text-sm leading-relaxed text-fg/55">{h.desc}</p>
                 </div>
               </Reveal>
             ))}

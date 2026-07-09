@@ -78,10 +78,10 @@ export default function CircularSkill({ name, level, color, icon, delay = 0 }: C
         </svg>
         <div className="absolute inset-0 flex flex-col items-center justify-center">
           {icon && <span className="mb-1 text-xl">{icon}</span>}
-          <span className="font-display text-2xl font-bold text-white">{animatedLevel}%</span>
+          <span className="font-display text-2xl font-bold text-fg">{animatedLevel}%</span>
         </div>
       </div>
-      <p className="text-sm font-medium text-white/70">{name}</p>
+      <p className="text-sm font-medium text-fg/70">{name}</p>
     </motion.div>
   );
 }

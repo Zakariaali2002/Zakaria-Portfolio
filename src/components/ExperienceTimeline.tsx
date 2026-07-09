@@ -79,9 +79,9 @@ export default function ExperienceTimeline() {
                       <span className="mb-2 inline-block rounded-full bg-brand/15 px-3 py-1 text-xs font-medium text-brand">
                         {exp.period}
                       </span>
-                      <h3 className="font-display text-xl font-semibold text-white">{exp.role}</h3>
+                      <h3 className="font-display text-xl font-semibold text-fg">{exp.role}</h3>
                       <p className="mt-1 text-sm text-brand/80 font-medium">{exp.company}</p>
-                      <p className="mt-3 text-sm leading-relaxed text-white/55">{exp.desc}</p>
+                      <p className="mt-3 text-sm leading-relaxed text-fg/55">{exp.desc}</p>
 
                       {/* Timeline dot for mobile */}
                       <div className={`absolute top-6 right-6 h-3 w-3 rounded-full bg-gradient-to-br ${exp.gradient} hidden md:block`} />

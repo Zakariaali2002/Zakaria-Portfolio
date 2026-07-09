@@ -11,6 +11,8 @@
   --color-brand: #8b5cf6;
   --color-brand-2: #d946ef;
   --color-accent: #22d3ee;
+  --color-fg: #e8e8f0;
+  --color-fg-secondary: rgba(255, 255, 255, 0.55);
 }
 
 html {
@@ -20,7 +22,7 @@ html {
 body {
   font-family: var(--font-body);
   background: var(--color-ink);
-  color: #e8e8f0;
+  color: var(--color-fg);
   overflow-x: hidden;
 }
 
@@ -48,7 +50,7 @@ body {
 }
 
 .glass {
-  background: rgba(18, 18, 31, 0.6);
+  background: color-mix(in srgb, var(--color-card) 60%, transparent);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
 }
@@ -204,3 +206,18 @@ body {
     radial-gradient(ellipse 60% 50% at 90% 20%, rgba(34, 211, 238, 0.08), transparent 55%),
     radial-gradient(ellipse 60% 50% at 10% 30%, rgba(217, 70, 239, 0.1), transparent 55%);
 }
+
+/* Dynamic foreground color utilities — respect light/dark theme */
+.text-fg { color: var(--color-fg); }
+.text-fg\/90 { color: color-mix(in srgb, var(--color-fg) 90%, transparent); }
+.text-fg\/85 { color: color-mix(in srgb, var(--color-fg) 85%, transparent); }
+.text-fg\/80 { color: color-mix(in srgb, var(--color-fg) 80%, transparent); }
+.text-fg\/75 { color: color-mix(in srgb, var(--color-fg) 75%, transparent); }
+.text-fg\/70 { color: color-mix(in srgb, var(--color-fg) 70%, transparent); }
+.text-fg\/65 { color: color-mix(in srgb, var(--color-fg) 65%, transparent); }
+.text-fg\/60 { color: color-mix(in srgb, var(--color-fg) 60%, transparent); }
+.text-fg\/55 { color: color-mix(in srgb, var(--color-fg) 55%, transparent); }
+.text-fg\/50 { color: color-mix(in srgb, var(--color-fg) 50%, transparent); }
+.text-fg\/40 { color: color-mix(in srgb, var(--color-fg) 40%, transparent); }
+.text-fg\/30 { color: color-mix(in srgb, var(--color-fg) 30%, transparent); }
+.text-fg-secondary { color: var(--color-fg-secondary); }
